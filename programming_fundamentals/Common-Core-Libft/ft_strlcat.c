@@ -1,34 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aqoraan <aqoraan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/10 17:19:10 by aqoraan           #+#    #+#             */
-/*   Updated: 2025/12/11 13:31:47 by aqoraan          ###   ########.fr       */
+/*   Created: 2025/12/11 20:35:01 by aqoraan           #+#    #+#             */
+/*   Updated: 2025/12/11 21:25:44 by aqoraan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
-void	ft_bzero(void *arr, size_t size)
+/*
+						strlcat will concatenate to the des as much as the
+   buffer can take from src
+*/
+size_t	ft_strlcat(char *des, const char *src, size_t size)
 {
-	unsigned char	*ptr;
-
-	ptr = (unsigned char *)arr;
-	while (size)
+	while (*des)
 	{
-		*ptr = 0;
+		des += 1;
+	}
+	while (size != 1)
+	{
+		*des++ = *src++;
 		size -= 1;
 	}
+	*des = '\0';
+	return (ft_strlen(src) + ft_strlen(des));
 }
-// int	main(void)
-// {
-// 	int	array[4] = {1, 2, 3, 4};
+// int main() {
 //
-// 	ft_bzero(array, sizeof(int));
-// 	for (int i = 0; i < 4; ++i)
-// 	{
-// 		printf("%d", array[i]);
-// 	}
+//   char *str = "ahmad";
+//   char des[10] = "hey";
+//   ft_strlcat(des, str, sizeof(des));
+//   printf("%s", des);
 // }

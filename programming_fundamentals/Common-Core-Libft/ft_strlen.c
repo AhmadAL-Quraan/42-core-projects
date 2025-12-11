@@ -6,19 +6,21 @@
 /*   By: aqoraan <aqoraan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 20:51:54 by aqoraan           #+#    #+#             */
-/*   Updated: 2025/12/11 13:31:47 by aqoraan          ###   ########.fr       */
+/*   Updated: 2025/12/11 20:31:43 by aqoraan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
-int ft_strlen(const char *str) {
-  size_t len;
+size_t	ft_strlen(const char *str)
+{
+	size_t	len;
 
-  len = 0;
-  while (*str != '\0') {
-    str += 1;
-    len += 1;
-  }
-  return (len);
+	len = 0;
+	while (*str != '\0')
+	{
+		str += 1;
+		len += 1;
+	}
+	return (len);
 }

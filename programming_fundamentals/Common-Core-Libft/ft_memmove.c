@@ -1,36 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */ /*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*                                                        :::      ::::::::   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aqoraan <aqoraan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 14:02:42 by aqoraan           #+#    #+#             */
-/*   Updated: 2025/12/11 14:21:37 by aqoraan          ###   ########.fr       */
+/*   Updated: 2025/12/11 21:23:27 by aqoraan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_memmove(void *dest, const void *src, size_t n) {
+void	*ft_memmove(void *dest, const void *src, size_t n)
+{
+	unsigned char	*ptr_des;
+	unsigned char	*ptr_src;
 
-  if (!dest && !src) {
-    return NULL;
-  }
-  unsigned char *ptrDest = (unsigned char *)dest;
-  unsigned char *ptrSrc = (unsigned char *)src;
-  // move the data to a temp of n bytes array
-  unsigned char temp[n];
-  size_t copyN = n;
-  int idx = 0;
-  while (copyN) {
-    copyN--;
-    temp[idx++] = *ptrSrc++;
-  }
-  idx = 0;
-  while (n--) {
-    *ptrDest++ = temp[idx++];
-  }
-  return dest;
+	if (!dest && !src)
+		return (NULL);
+	ptr_des = (unsigned char *)dest;
+	ptr_src = (unsigned char *)src;
+	if (ptr_des < ptr_src)
+	{
+		while (n--)
+			*ptr_des++ = *ptr_src++;
+	}
+	else
+	{
+		ptr_des += n;
+		ptr_src += n;
+		ptr_des -= 1;
+		ptr_src -= 1;
+		while (n--)
+			*ptr_des-- = *ptr_src--;
+	}
+	return (dest);
 }
 // int main() {
 //
@@ -41,4 +46,5 @@ void *ft_memmove(void *dest, const void *src, size_t n) {
 //   for (int i = 0; i < 3; ++i) {
 //     printf("%c", arr[i]);
 //   }
+//   // result is 112
 // }

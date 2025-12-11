@@ -6,27 +6,32 @@
 /*   By: aqoraan <aqoraan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 18:20:25 by aqoraan           #+#    #+#             */
-/*   Updated: 2025/12/11 16:02:21 by aqoraan          ###   ########.fr       */
+/*   Updated: 2025/12/11 21:26:14 by aqoraan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_memcpy(void *dest, const void *src, size_t n) {
-  unsigned char *ptr1;
-  unsigned char *ptr2;
+/*
+			copy byte by byte, not the whole thing*
 
-  ptr1 = (unsigned char *)dest;
-  ptr2 = (unsigned char *)src;
-  if (!ptr1 && !ptr2) {
-    return (NULL);
-  }
+*/
+void	*ft_memcpy(void *dest, const void *src, size_t n)
+{
+	unsigned char	*ptr1;
+	unsigned char	*ptr2;
 
-  // copy byte by byte, not the whole thing
-  while (n--) {
-    *ptr1++ = *ptr2++;
-  }
-  return (dest);
+	ptr1 = (unsigned char *)dest;
+	ptr2 = (unsigned char *)src;
+	if (!ptr1 && !ptr2)
+	{
+		return (NULL);
+	}
+	while (n--)
+	{
+		*ptr1++ = *ptr2++;
+	}
+	return (dest);
 }
 // int main() {
 //

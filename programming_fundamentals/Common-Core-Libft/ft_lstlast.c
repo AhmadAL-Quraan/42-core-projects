@@ -1,34 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aqoraan <aqoraan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/10 17:19:10 by aqoraan           #+#    #+#             */
-/*   Updated: 2025/12/11 13:31:47 by aqoraan          ###   ########.fr       */
+/*   Created: 2025/12/11 22:01:35 by aqoraan           #+#    #+#             */
+/*   Updated: 2025/12/11 22:10:36 by aqoraan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
-void	ft_bzero(void *arr, size_t size)
+/*
+ *Return the last node of the list
+ The idea is to loop until you find the next_node of some node is NULL
+ *
+ * */
+t_list	*ft_lstlast(t_list *lst)
 {
-	unsigned char	*ptr;
-
-	ptr = (unsigned char *)arr;
-	while (size)
+	if (!lst)
 	{
-		*ptr = 0;
-		size -= 1;
+		return (NULL);
 	}
+	while (lst)
+	{
+		if (lst->next_node == NULL)
+		{
+			break ;
+		}
+		lst = lst->next_node;
+	}
+	return (lst);
 }
-// int	main(void)
-// {
-// 	int	array[4] = {1, 2, 3, 4};
-//
-// 	ft_bzero(array, sizeof(int));
-// 	for (int i = 0; i < 4; ++i)
-// 	{
-// 		printf("%d", array[i]);
-// 	}
+
+// int main(){
+//   char *cont1= "ahmad";
+//   t_list *node1 = ft_lstnew(cont1);
+//   t_list node2= ft_lstnew(cont1);
+//   node1
 // }

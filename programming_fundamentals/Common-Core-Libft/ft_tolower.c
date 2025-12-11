@@ -1,34 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aqoraan <aqoraan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/10 17:19:10 by aqoraan           #+#    #+#             */
-/*   Updated: 2025/12/11 13:31:47 by aqoraan          ###   ########.fr       */
+/*   Created: 2025/12/11 21:43:44 by aqoraan           #+#    #+#             */
+/*   Updated: 2025/12/11 21:50:01 by aqoraan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
 
-void	ft_bzero(void *arr, size_t size)
+/*
+ *
+ *if the letter already small return it
+ if it wasn't in the capital letter range, return wrong
+ return it small letter
+ * */
+int	ft_tolower(int c)
 {
-	unsigned char	*ptr;
-
-	ptr = (unsigned char *)arr;
-	while (size)
+	if (c >= 65 && c <= 90)
 	{
-		*ptr = 0;
-		size -= 1;
+		return (c + 32);
 	}
+	return (c);
 }
-// int	main(void)
-// {
-// 	int	array[4] = {1, 2, 3, 4};
-//
-// 	ft_bzero(array, sizeof(int));
-// 	for (int i = 0; i < 4; ++i)
-// 	{
-// 		printf("%d", array[i]);
-// 	}
-// }
