@@ -1,10 +1,13 @@
 # 42-core-projects
-Those are my projects in 42 core
+
+* Those are my projects in 42 core.
+* Separated into numbered modules.
+* Each module it's projects.
 
 
-# Notes on functions
 
-* ft_memcpy:
-	* The difference between ft_memcpy and ft_memmove, is that it doesn't handle overlapping.
-	* ![[Pasted image 20251211151342.png]]
-	* ft_memmove will solve this issue by copying the data of the src array into a temp array.
+* I have two directories at my 42 device on-site, one for sharing github between my personal device (laptop) and my device in the lab. The other directory just for my in-physical projects inside the lab.
+* If I am working from home, I would edit the first directory and when finish I will upload it on my github repo.
+	* On my device at 42, I will pull it use `git pull` then use `rsync`, to sync the files on my main local working directory.
+* If I am working inside 42, I will make `rsync` to my shared directory (the one I can upload on github), then push it on my github repo account.
+
