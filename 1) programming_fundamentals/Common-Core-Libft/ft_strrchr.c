@@ -1,47 +1,52 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aqoraan <aqoraan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/11 22:01:35 by aqoraan           #+#    #+#             */
-/*   Updated: 2025/12/14 20:08:51 by aqoraan          ###   ########.fr       */
+/*   Created: 2025/12/14 21:02:50 by aqoraan           #+#    #+#             */
+/*   Updated: 2025/12/14 21:45:13 by aqoraan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
- *Return the last node of the list
- The idea is to loop until you find the next_node of some node is NULL
+ *
+ *It works like ft_strchr but searches for the last appearence of c
+ search for '\0' if *s == c ...
  *
  * */
-t_list	*ft_lstlast(t_list *lst)
+char	*ft_strrchr(const char *s, int c)
 {
-	if (!lst)
+	char	*save_last;
+
+	if (!s)
 	{
 		return (NULL);
 	}
-	while (lst)
+	save_last = NULL;
+	while (*s)
 	{
-		if (lst->next_node == NULL)
+		if ((unsigned char)*s == (unsigned char)c)
 		{
-			break ;
+			save_last = (char *)s;
 		}
-		lst = lst->next_node;
+		s += 1;
 	}
-	return (lst);
+	if (*s == c)
+	{
+		return ((char *)s);
+	}
+	return (save_last);
 }
 
 // int main() {
-//   char *cont1 = "ahmad";
-//   t_list *node1 = ft_lstnew(cont1);
-//   t_list *node2 = ft_lstnew(cont1);
-//   node1->next_node = node2;
-//   if (ft_lstlast(node1)->next_node == NULL) {
-//     printf("%s", "done");
+//   char *s = "\xC3\xA9"; // UTF-8 for é
+//   if (ft_strrchr(s, 0xC3) != NULL) {
+//     printf("%s", "yes");
 //   } else {
-//     printf("%s", "wrong");
+//     printf("%s", "no");
 //   }
 // }

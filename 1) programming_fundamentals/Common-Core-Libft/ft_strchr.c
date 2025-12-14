@@ -6,7 +6,7 @@
 /*   By: aqoraan <aqoraan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 17:07:01 by aqoraan           #+#    #+#             */
-/*   Updated: 2025/12/14 18:18:52 by aqoraan          ###   ########.fr       */
+/*   Updated: 2025/12/14 21:43:58 by aqoraan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 /*
  *
  *return a pointer to the first occurence of the char c in the string
+ don't forget to check on '\0'
+ it should search from 0 --> 255, so unsigned char
  *
  * */
 char	*ft_strchr(const char *s, int c)
@@ -25,26 +27,26 @@ char	*ft_strchr(const char *s, int c)
 	}
 	while (*s)
 	{
-		if (*s == c)
+		if ((unsigned char)*s == (unsigned char)c)
 		{
 			return ((char *)s);
 		}
 		s += 1;
 	}
+	if (*s == c)
+	{
+		return ((char *)s);
+	}
 	return (NULL);
 }
 
-// int	main(void)
-// {
-// 	char	*str1;
+// int main(void) {
 //
-// 	str1 = "";
-// 	if (ft_strchr(str1, 'z') != NULL)
-// 	{
-// 		printf("%s", "YES");
-// 	}
-// 	else
-// 	{
-// 		printf("%s", "NO");
-// 	}
+//   //If you remove unsigned char, it won't recognize this, becuase it's 233 in
+//   UTF-8 char *str1 = "\xC3\xA9"; // UTF-8 for é if (ft_strchr(str1, 0xC3) !=
+//   NULL) {
+//     printf("%s", "YES");
+//   } else {
+//     printf("%s", "NO");
+//   }
 // }
