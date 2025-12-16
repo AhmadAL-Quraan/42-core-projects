@@ -1,3 +1,4 @@
+
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
@@ -23,7 +24,6 @@
 # target: prerequisite(dependecy)
 # 		command
 # 		command
-
 # Make search in the current directory for the specified files (dependecies) or (targets)
 
 
@@ -61,6 +61,7 @@ OBJS = $(SRCS:.c=.o)
 OBJS_B = $(SRCS_B:.c=.o)
 
 
+# To use with libft test cases saved in ~/Documents/programs/42_helping_tools/ on my personal machine
 so: $(OBJS)
 	$(CC) -shared -o libft.so $(OBJS)
 
