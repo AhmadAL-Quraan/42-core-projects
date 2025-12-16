@@ -6,7 +6,7 @@
 /*   By: aqoraan <aqoraan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 20:51:54 by aqoraan           #+#    #+#             */
-/*   Updated: 2025/12/11 20:31:43 by aqoraan          ###   ########.fr       */
+/*   Updated: 2025/12/16 23:50:40 by aqoraan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ size_t	ft_strlen(const char *str)
 	size_t	len;
 
 	len = 0;
-	while (*str != '\0')
+	while (*str)
 	{
 		str += 1;
 		len += 1;
