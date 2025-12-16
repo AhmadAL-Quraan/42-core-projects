@@ -16,4 +16,4 @@
 # Libft
 
 * [Generate test cases](https://github.com/alelievr/libft-unit-test#)
-* [Useful repo](https://github.com/f-corvaro/LIBFT/blob/main/libft/Makefile)
+* [Useful repo](https://github.com/f-corvaro/42.common_core?tab=readme-ov-file)
