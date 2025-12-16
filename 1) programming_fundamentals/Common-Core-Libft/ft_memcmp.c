@@ -23,21 +23,27 @@
  *
  * IT COMPARES BYTES NOT NUMBERS NOR STRINGS
  * */
-int ft_memcmp(const void *s1, const void *s2, size_t n) {
-  unsigned char *ptr1 = (unsigned char *)s1;
-  unsigned char *ptr2 = (unsigned char *)s2;
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
+{
+	unsigned char	*ptr1;
+	unsigned char	*ptr2;
+	int				i;
 
-  int i = 0;
-  while (n > 0) {
-    if (ptr1[i] != ptr2[i]) {
-      return ptr1[i] - ptr2[i];
-    }
-    ptr1 += 1;
-    ptr2 += 1;
-    n -= 1;
-    i += 1;
-  }
-  return 0;
+	ptr1 = (unsigned char *)s1;
+	ptr2 = (unsigned char *)s2;
+	i = 0;
+	while (n > 0)
+	{
+		if (ptr1[i] != ptr2[i])
+		{
+			return (ptr1[i] - ptr2[i]);
+		}
+		ptr1 += 1;
+		ptr2 += 1;
+		n -= 1;
+		i += 1;
+	}
+	return (0);
 }
 
 // int main() {
