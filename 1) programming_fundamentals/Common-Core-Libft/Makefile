@@ -6,7 +6,7 @@
 #    By: aqoraan <aqoraan@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/26 13:07:48 by aqoraan           #+#    #+#              #
-#    Updated: 2025/11/26 23:01:58 by aqoraan          ###   ########.fr        #
+#    Updated: 2025/12/16 17:00:39 by aqoraan          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,30 @@ PART1 = ft_tolower.c ft_toupper.c ft_isprint.c ft_isascii.c ft_isalnum.c \
 		ft_lstiter.c ft_lstmap.c ft_lstsize.c ft_lstlast.c ft_itoa.c ft_strjoin.c ft_split.c ft_striteri.c ft_strmapi.c \
 		ft_substr.c ft_strtrim.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c \
 		ft_putnbr_fd.c
+
+CC = cc
+CFLAGS = -Wall -Wextra -Werror
+
+SRCS = $(PART1)
+OBJS = $(SRCS:.c=.o)
+
+all: $(NAME)
+
+$(NAME): $(OBJS)
+	ar rcs $(NAME) $(OBJS)
+
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+clean:
+	rm -f $(OBJS)
+
+fclean: clean
+	rm -f $(NAME)
+
+re: fclean all
+
+.PHONY: all clean fclean re
 
 
 
