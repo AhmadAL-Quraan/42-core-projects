@@ -6,15 +6,16 @@
 /*   By: aqoraan <aqoraan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 18:20:25 by aqoraan           #+#    #+#             */
-/*   Updated: 2025/12/11 21:26:14 by aqoraan          ###   ########.fr       */
+/*   Updated: 2025/12/26 23:06:15 by aqoraan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-			copy byte by byte, not the whole thing*
-
+						copy byte by byte, not the whole thing*
+		without handling intersection --> good if two seperate pointers to two
+   seperate strings
 */
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
@@ -33,6 +34,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	}
 	return (dest);
 }
+
 // int main() {
 //
 //   // overlap test

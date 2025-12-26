@@ -6,7 +6,7 @@
 /*   By: aqoraan <aqoraan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 20:37:28 by aqoraan           #+#    #+#             */
-/*   Updated: 2025/12/16 20:37:29 by aqoraan          ###   ########.fr       */
+/*   Updated: 2025/12/26 22:55:12 by aqoraan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
  overflow  or underflow are done. )
  3) handle (postitive / negative) sign
  it's just handle an initial sign not a consuctive ones (according to the doc ->
+ 4) Make long long for number becauase if you have this number taken
 search on google)
 atoi("++42")   → 0
 after a sign it must be digit
@@ -36,10 +37,10 @@ atoi("42   23") -> 42 --> make active = 1 when a number is hit [ whitespace ] [
 
 int	ft_atoi(const char *nptr)
 {
-	int	sign;
-	int	active;
-	int	number;
-	int	i;
+	int		sign;
+	int		active;
+	long	number;
+	size_t	i;
 
 	sign = 1;
 	active = 0;
@@ -60,10 +61,13 @@ int	ft_atoi(const char *nptr)
 			number = (number * 10) + (char)nptr[i] - '0';
 		i += 1;
 	}
-	return (number * sign);
+	return ((int)(number * sign));
 }
 
 // int main() {
+//   printf("%d\n", ft_atoi("---2"));
+//   printf("%d\n", ft_atoi("-2147483648"));
+//   printf("%d\n", ft_atoi("2147483648"));
 //   printf("%d\n", ft_atoi("123-a"));
 //   printf("%d\n", ft_atoi("123-a"));
 //   printf("%d\n", ft_atoi("9-8"));
