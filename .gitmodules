@@ -1,3 +1,6 @@
 [submodule "Libft-project"]
 	path = Libft-project
 	url = https://github.com/AhmadAL-Quraan/Libft-project
+[submodule "1_programming_fundementals/Libft-project"]
+	path = 1_programming_fundementals/Libft-project
+	url = https://github.com/AhmadAL-Quraan/Libft-project
